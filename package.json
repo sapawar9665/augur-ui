@@ -41,6 +41,11 @@
     "docker:spin-down": "AUGUR_CORE_VERSION=$(npm explore augur.js -- npm run --silent core:version) docker-compose down",
     "version": "npm run build:mainnet"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm run test"
+    }
+  },
   "dependencies": {
     "async": "2.6.0",
     "augur.js": "5.0.0-16",
@@ -130,6 +135,7 @@
     "html-webpack-plugin": "2.30.1",
     "http": "0.0.0",
     "https": "1.0.0",
+    "husky": "^1.0.0-rc.13",
     "ignore-styles": "5.0.1",
     "import-glob-loader": "1.1.0",
     "inline-source-cli": "1.2.0",
